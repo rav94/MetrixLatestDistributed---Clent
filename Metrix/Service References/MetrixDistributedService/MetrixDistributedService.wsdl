@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetrixDistributedService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MetrixDistributedNew" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICustomerServices_CustomerSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerSave" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDelete" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerSearch" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerServices_CustomerSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeSave" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeSearch" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_EmployeeSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductSave" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductDelete" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductSearch" />
+  </wsdl:message>
+  <wsdl:message name="IProductServices_ProductSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierSave" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDelete" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierServices_SupplierSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_InvoiceSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvoiceSave" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_InvoiceSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvoiceSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_SaveInvoiceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvoiceList" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_SaveInvoiceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvoiceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_InvoiceProductSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvoiceProductSearch" />
+  </wsdl:message>
+  <wsdl:message name="IInvoiceServices_InvoiceProductSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvoiceProductSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderSave" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderDelete" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_OrderDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_SaveOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrderList" />
+  </wsdl:message>
+  <wsdl:message name="IOrderServices_SaveOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserSettingsServices_SignUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignUp" />
+  </wsdl:message>
+  <wsdl:message name="IUserSettingsServices_SignUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserSettingsServices_ChangeUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserSettingsServices_ChangeUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICustomerServices">
+    <wsdl:operation name="CustomerSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerServices/CustomerSave" message="tns:ICustomerServices_CustomerSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerServices/CustomerSaveResponse" message="tns:ICustomerServices_CustomerSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerServices/CustomerUpdate" message="tns:ICustomerServices_CustomerUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerServices/CustomerUpdateResponse" message="tns:ICustomerServices_CustomerUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerServices/CustomerDelete" message="tns:ICustomerServices_CustomerDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerServices/CustomerDeleteResponse" message="tns:ICustomerServices_CustomerDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerServices/CustomerSearch" message="tns:ICustomerServices_CustomerSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerServices/CustomerSearchResponse" message="tns:ICustomerServices_CustomerSearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEmployeeServices">
+    <wsdl:operation name="EmployeeSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeSave" message="tns:IEmployeeServices_EmployeeSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeSaveResponse" message="tns:IEmployeeServices_EmployeeSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeUpdate" message="tns:IEmployeeServices_EmployeeUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeUpdateResponse" message="tns:IEmployeeServices_EmployeeUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeDelete" message="tns:IEmployeeServices_EmployeeDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeDeleteResponse" message="tns:IEmployeeServices_EmployeeDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeSearch" message="tns:IEmployeeServices_EmployeeSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/EmployeeSearchResponse" message="tns:IEmployeeServices_EmployeeSearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductServices">
+    <wsdl:operation name="ProductSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductServices/ProductSave" message="tns:IProductServices_ProductSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductServices/ProductSaveResponse" message="tns:IProductServices_ProductSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductServices/ProductUpdate" message="tns:IProductServices_ProductUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductServices/ProductUpdateResponse" message="tns:IProductServices_ProductUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductServices/ProductDelete" message="tns:IProductServices_ProductDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductServices/ProductDeleteResponse" message="tns:IProductServices_ProductDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductServices/ProductSearch" message="tns:IProductServices_ProductSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductServices/ProductSearchResponse" message="tns:IProductServices_ProductSearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISupplierServices">
+    <wsdl:operation name="SupplierSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierServices/SupplierSave" message="tns:ISupplierServices_SupplierSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierServices/SupplierSaveResponse" message="tns:ISupplierServices_SupplierSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierServices/SupplierUpdate" message="tns:ISupplierServices_SupplierUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierServices/SupplierUpdateResponse" message="tns:ISupplierServices_SupplierUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierServices/SupplierDelete" message="tns:ISupplierServices_SupplierDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierServices/SupplierDeleteResponse" message="tns:ISupplierServices_SupplierDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierServices/SupplierSearch" message="tns:ISupplierServices_SupplierSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierServices/SupplierSearchResponse" message="tns:ISupplierServices_SupplierSearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IInvoiceServices">
+    <wsdl:operation name="InvoiceSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoiceServices/InvoiceSave" message="tns:IInvoiceServices_InvoiceSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoiceServices/InvoiceSaveResponse" message="tns:IInvoiceServices_InvoiceSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvoiceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoiceServices/SaveInvoiceList" message="tns:IInvoiceServices_SaveInvoiceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoiceServices/SaveInvoiceListResponse" message="tns:IInvoiceServices_SaveInvoiceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceProductSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoiceServices/InvoiceProductSearch" message="tns:IInvoiceServices_InvoiceProductSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoiceServices/InvoiceProductSearchResponse" message="tns:IInvoiceServices_InvoiceProductSearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOrderServices">
+    <wsdl:operation name="OrderSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderServices/OrderSave" message="tns:IOrderServices_OrderSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderServices/OrderSaveResponse" message="tns:IOrderServices_OrderSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderServices/OrderUpdate" message="tns:IOrderServices_OrderUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderServices/OrderUpdateResponse" message="tns:IOrderServices_OrderUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderServices/OrderDelete" message="tns:IOrderServices_OrderDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderServices/OrderDeleteResponse" message="tns:IOrderServices_OrderDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrderList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderServices/SaveOrderList" message="tns:IOrderServices_SaveOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderServices/SaveOrderListResponse" message="tns:IOrderServices_SaveOrderList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ILoginService">
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/SignIn" message="tns:ILoginService_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/SignInResponse" message="tns:ILoginService_SignIn_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUserSettingsServices">
+    <wsdl:operation name="SignUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserSettingsServices/SignUp" message="tns:IUserSettingsServices_SignUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserSettingsServices/SignUpResponse" message="tns:IUserSettingsServices_SignUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserSettingsServices/ChangeUser" message="tns:IUserSettingsServices_ChangeUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserSettingsServices/ChangeUserResponse" message="tns:IUserSettingsServices_ChangeUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICustomerServices" type="tns:ICustomerServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerSave">
+      <soap:operation soapAction="http://tempuri.org/ICustomerServices/CustomerSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerUpdate">
+      <soap:operation soapAction="http://tempuri.org/ICustomerServices/CustomerUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDelete">
+      <soap:operation soapAction="http://tempuri.org/ICustomerServices/CustomerDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearch">
+      <soap:operation soapAction="http://tempuri.org/ICustomerServices/CustomerSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEmployeeServices" type="tns:IEmployeeServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmployeeSave">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/EmployeeSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeUpdate">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/EmployeeUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeDelete">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/EmployeeDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeSearch">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/EmployeeSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProductServices" type="tns:IProductServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProductSave">
+      <soap:operation soapAction="http://tempuri.org/IProductServices/ProductSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductUpdate">
+      <soap:operation soapAction="http://tempuri.org/IProductServices/ProductUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductDelete">
+      <soap:operation soapAction="http://tempuri.org/IProductServices/ProductDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductSearch">
+      <soap:operation soapAction="http://tempuri.org/IProductServices/ProductSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISupplierServices" type="tns:ISupplierServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SupplierSave">
+      <soap:operation soapAction="http://tempuri.org/ISupplierServices/SupplierSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierUpdate">
+      <soap:operation soapAction="http://tempuri.org/ISupplierServices/SupplierUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDelete">
+      <soap:operation soapAction="http://tempuri.org/ISupplierServices/SupplierDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierSearch">
+      <soap:operation soapAction="http://tempuri.org/ISupplierServices/SupplierSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IInvoiceServices" type="tns:IInvoiceServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InvoiceSave">
+      <soap:operation soapAction="http://tempuri.org/IInvoiceServices/InvoiceSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvoiceList">
+      <soap:operation soapAction="http://tempuri.org/IInvoiceServices/SaveInvoiceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceProductSearch">
+      <soap:operation soapAction="http://tempuri.org/IInvoiceServices/InvoiceProductSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IOrderServices" type="tns:IOrderServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrderSave">
+      <soap:operation soapAction="http://tempuri.org/IOrderServices/OrderSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderUpdate">
+      <soap:operation soapAction="http://tempuri.org/IOrderServices/OrderUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDelete">
+      <soap:operation soapAction="http://tempuri.org/IOrderServices/OrderDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrderList">
+      <soap:operation soapAction="http://tempuri.org/IOrderServices/SaveOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ILoginService" type="tns:ILoginService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUserSettingsServices" type="tns:IUserSettingsServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignUp">
+      <soap:operation soapAction="http://tempuri.org/IUserSettingsServices/SignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUser">
+      <soap:operation soapAction="http://tempuri.org/IUserSettingsServices/ChangeUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MetrixDistributedService">
+    <wsdl:port name="BasicHttpBinding_ICustomerServices" binding="tns:BasicHttpBinding_ICustomerServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEmployeeServices" binding="tns:BasicHttpBinding_IEmployeeServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProductServices" binding="tns:BasicHttpBinding_IProductServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISupplierServices" binding="tns:BasicHttpBinding_ISupplierServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IInvoiceServices" binding="tns:BasicHttpBinding_IInvoiceServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOrderServices" binding="tns:BasicHttpBinding_IOrderServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ILoginService" binding="tns:BasicHttpBinding_ILoginService">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUserSettingsServices" binding="tns:BasicHttpBinding_IUserSettingsServices">
+      <soap:address location="http://localhost:8080/MetrixDistributedService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
